@@ -12,8 +12,6 @@ import moduleHr from "./modules/hr";
 import moduleEraser from "./modules/eraser/index";
 import moduleUndo from "./modules/undo/index";
 import moduleFullScreen from "./modules/full-screen/index";
-import moduleInfo from "./modules/info/index";
-import i18nZhCn from "./i18n/zh-cn";
 import i18nEnUs from "./i18n/en-us";
 import arrayFill from "./array-polyfill";
 
@@ -23,10 +21,9 @@ import arrayFill from "./array-polyfill";
  * @param options {Object}
  */
 exports.install = (Vue, options) => {
+    arrayFill();
 
-    arrayFill()
-
-    options = options || {}
+    options = options || {};
 
     //modules
     let modules = [
@@ -42,8 +39,7 @@ exports.install = (Vue, options) => {
         moduleHr,
         moduleEraser,
         moduleUndo,
-        moduleFullScreen,
-        moduleInfo
+        moduleFullScreen
     ]
     //extended modules
     if (Array.isArray(options.modules)) {
@@ -84,7 +80,7 @@ exports.install = (Vue, options) => {
 
 
     let components = {}
-    modules.forEach((module)=> {
+    modules.forEach(module => {
 
         //specify the config for each module in options by name
         let config = options[module.name]
@@ -105,7 +101,7 @@ exports.install = (Vue, options) => {
     })
 
     //i18n
-    let i18n = {"zh-cn": i18nZhCn, "en-us": i18nEnUs}
+    let i18n = { "en-us": i18nEnUs}
     let customI18n = options.i18n || {}
     Object.keys(customI18n).forEach((key)=> {
         i18n[key] = i18n[key] ? Vue.util.extend(i18n[key], customI18n[key]) : customI18n[key]

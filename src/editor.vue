@@ -3,7 +3,7 @@
     <div class="vue-html5-editor" :style="{'z-index':zIndex}" :class="{'full-screen':fullScreen}">
         <div class="toolbar" :style="{'z-index':zIndex+1}" v-el:toolbar>
             <ul>
-                <li v-for="module in modules" v-if="module.show" :title="locale[module.i18n]"
+                <li v-for="module in visibleModules" :title="locale[module.i18n]"
                     @click="activeModule(module)">
                     <span class="icon" :class="module.icon"></span>
                 </li>
@@ -43,6 +43,7 @@
                 default: true
             }
         },
+
         data () {
             return {
                 //locale: {},
@@ -80,8 +81,8 @@
                 }
                 component.$appendTo(component.parentEl)
             }
-        }
-        ,
+        },
+
         computed: {
             contentStyle(){
                 let style = {}
@@ -95,6 +96,10 @@
                 }
                 style["min-height"] = this.height + 'px'
                 return style
+            },
+
+            visibleModules: function() {
+                return this.modules.filter(module => module.show);
             }
         },
         methods: {
@@ -164,23 +169,24 @@
             })
         },
         ready(){
-            let component = this
-            let content = component.$els.content
-            content.innerHTML = component.content
-            content.addEventListener("mouseup", component.saveCurrentRange, false)
-            content.addEventListener("keyup", component.saveCurrentRange, false)
-            content.addEventListener("mouseout", component.saveCurrentRange, false)
+            let component = this;
+            let content = component.$els.content;
+            content.innerHTML = component.content;
+            content.addEventListener("mouseup", component.saveCurrentRange, false);
+            content.addEventListener("keyup", component.saveCurrentRange, false);
+            content.addEventListener("mouseout", component.saveCurrentRange, false);
             content.addEventListener("keyup", function () {
                 component.content = component.$els.content.innerHTML
-            }, false)
+            }, false);
 
             component.touchHandler = function (e) {
                 if (component.$els.content.contains(e.target)) {
                     component.saveCurrentRange()
                 }
-            }
+            };
 
-            window.addEventListener("touchend", component.touchHandler, false)
+            window.addEventListener("touchend", component.touchHandler, false);
+
         },
         beforeDestroy(){
             let editor = this
