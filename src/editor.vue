@@ -29,10 +29,7 @@
             },
             height: {
                 type: Number,
-                default: 300,
-                validator (val) {
-                    return val >= 300
-                }
+                default: 300
             },
             zIndex: {
                 type: Number,

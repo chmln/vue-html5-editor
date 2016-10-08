@@ -1091,10 +1091,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 	        height: {
 	            type: Number,
-	            default: 300,
-	            validator: function validator(val) {
-	                return val >= 300;
-	            }
+	            default: 300
 	        },
 	        zIndex: {
 	            type: Number,
