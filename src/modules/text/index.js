@@ -4,7 +4,7 @@
  */
 import dashboard from "./dashboard.vue";
 export default {
-    name: "text",
+    name: "text_module",
     icon: "fa fa-pencil",
     i18n: "text",
     show: true,

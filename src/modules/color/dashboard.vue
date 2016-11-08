@@ -8,6 +8,7 @@
     }
 </style>
 <template>
+<div>
     <div>
         <label>
             <input type="radio" value="foreColor" v-model="command">&nbsp;
@@ -23,6 +24,7 @@
         </div>
         <div style="clear: both"></div>
     </div>
+</div>
 </template>
 <script>
     export default {

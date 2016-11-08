@@ -4,6 +4,7 @@ var webpack = require("webpack")
 module.exports = {
     context: __dirname + "/src",
     entry: "./index.js",
+    watch: true,
     output: {
         path: __dirname + "/dist",
         filename: "vue-html5-editor.js",
@@ -15,7 +16,7 @@ module.exports = {
             {test: /\.css$/, loader: "style-loader!css-loader"},
             {test: /(\.html)$/, loader: "html-loader"},
             {test: /\.(jpg)|(png)|(gif)$/, loader: "url-loader"},
-            {test: /\.vue$/, loader: "vue-loader"},
+            {test: /\.vue$/, loader: "vue"},
             {
                 test: /\.js$/,
                 exclude: /node_modules/,

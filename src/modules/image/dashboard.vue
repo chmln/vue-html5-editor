@@ -11,8 +11,8 @@
         <div v-if="upload.status=='progress'">
             {{$parent.locale.progress}}:{{progressComputable ? $parent.locale.unknown : upload.complete}}
         </div>
-        <div v-if="upload.status=='success'">
-            {{$parent.locale.["please wait"]}}...
+        <div v-if="upload.status==='success'">
+            {{$parent.locale["please wait"]}}
         </div>
         <div v-if="upload.status=='error'">
             {{$parent.locale.upload}}&nbsp;{{$parent.locale.error}},
