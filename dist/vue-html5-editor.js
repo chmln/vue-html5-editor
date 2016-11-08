@@ -143,7 +143,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        //hidden modules
 	        if (Array.isArray(options.hiddenModules)) {
 	            modules = modules.filter(function (module) {
-	                return !~options.hiddenModules.indexOf(m.name);
+	                return !~options.hiddenModules.indexOf(module.name);
 	            });
 	        }
 
@@ -1182,7 +1182,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        },
 	        activeModule: function activeModule(module) {
-	            console.log(module);
 	            if (typeof module.handler == "function") {
 	                module.handler(this);
 	            }
@@ -2661,7 +2660,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.upload.status = "ready";
 	        },
 	        pick: function pick() {
-	            this.$els.file.click();
+	            this.$refs.file.click();
 	        },
 	        insertImage: function insertImage(e) {
 	            e.preventDefault();
@@ -2675,12 +2674,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            var component = this;
 	            var config = component.$options.module.config;
 
-	            var file = this.$els.file.files[0];
+	            var file = this.$refs.file.files[0];
 	            if (file.size > config.size_limit) {
-	                alert("文件过大");
+	                alert("Image size exceeds allowed limit");
 	                return;
 	            }
-	            component.$els.file.value = null;
+	            component.$refs.file.value = null;
 	            //需要压缩
 	            if (config.compress) {
 	                (0, _lrzAll2.default)(file, {
@@ -4431,11 +4430,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "click": pick
 	    }
 	  }, [_s($parent.locale.upload)]), " ", _h('input', {
-	    directives: [{
-	      name: "el",
-	      rawName: "v-el:file",
-	      arg: "file"
-	    }],
+	    ref: "file",
 	    attrs: {
 	      "type": "file",
 	      "style": "display: none !important;",

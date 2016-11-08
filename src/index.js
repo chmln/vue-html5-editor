@@ -43,7 +43,7 @@ module.exports = {
 
         //hidden modules
         if (Array.isArray(options.hiddenModules)) {
-            modules = modules.filter(module => !~options.hiddenModules.indexOf(m.name))
+            modules = modules.filter(module => !~options.hiddenModules.indexOf(module.name))
         }
 
         //visible modules

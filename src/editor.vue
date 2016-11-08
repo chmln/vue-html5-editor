@@ -132,7 +132,6 @@
                 }
             },
             activeModule(module){
-                console.log(module);
                 if (typeof module.handler == "function") {
                     module.handler(this);
                 }
