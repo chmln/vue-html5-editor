@@ -116,11 +116,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _index22 = _interopRequireDefault(_index21);
 
-	var _index23 = __webpack_require__(120);
+	var _index23 = __webpack_require__(119);
 
 	var _index24 = _interopRequireDefault(_index23);
 
-	var _enUs = __webpack_require__(119);
+	var _enUs = __webpack_require__(120);
 
 	var _enUs2 = _interopRequireDefault(_enUs);
 
@@ -1145,7 +1145,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.fullScreen = !this.fullScreen;
 	        },
 	        toggleDashboard: function toggleDashboard(dashboard) {
-	            console.log("toggle");
 	            this.dashboard == dashboard ? this.dashboard = null : this.dashboard = dashboard;
 	        },
 	        execCommand: function execCommand(command, arg) {
@@ -4546,6 +4545,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	/**
+	 * toggle full screen mode
+	 * Created by peak on 16/8/18.
+	 */
+	exports.default = {
+	    name: "full-screen",
+	    icon: "fa fa-arrows-alt",
+	    i18n: "full screen",
+	    show: true,
+	    handler: function handler(editor) {
+	        editor.toggleFullScreen();
+	    }
+	};
+
+/***/ },
+/* 120 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.default = {
 	    "align": "align",
 	    "image": "image",
@@ -4590,29 +4612,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    "hr": "horizontal rule",
 	    "undo": "undo",
 	    "line height": "line height"
-	};
-
-/***/ },
-/* 120 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	/**
-	 * toggle full screen mode
-	 * Created by peak on 16/8/18.
-	 */
-	exports.default = {
-	    name: "full-screen",
-	    icon: "fa fa-arrows-alt",
-	    i18n: "full screen",
-	    show: true,
-	    handler: function handler(editor) {
-	        editor.toggleFullScreen();
-	    }
 	};
 
 /***/ }

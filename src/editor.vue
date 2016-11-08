@@ -94,7 +94,6 @@
                 this.fullScreen = !this.fullScreen
             },
             toggleDashboard(dashboard){
-                console.log("toggle");
                 this.dashboard == dashboard ? this.dashboard = null : this.dashboard = dashboard
             },
             execCommand(command, arg){
