@@ -1455,7 +1455,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Created by peak on 16/8/18.
 	 */
 	exports.default = {
-	    name: "font",
+	    name: "font_name_size",
 	    icon: "fa fa-font",
 	    i18n: "font",
 	    show: true,
@@ -2179,7 +2179,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
-	    name: "link",
+	    name: "hyperlink",
 	    icon: "fa fa-chain",
 	    show: true,
 	    i18n: "link",
@@ -2559,7 +2559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Created by peak on 16/8/18.
 	 */
 	exports.default = {
-	    name: "image",
+	    name: "photo",
 	    icon: "fa fa-file-image-o",
 	    i18n: "image",
 	    show: true,

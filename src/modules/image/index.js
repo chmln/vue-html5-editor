@@ -5,7 +5,7 @@ import dashboard from "./dashboard.vue";
  * Created by peak on 16/8/18.
  */
 export default {
-    name: "image",
+    name: "photo",
     icon: "fa fa-file-image-o",
     i18n: "image",
     show: true,

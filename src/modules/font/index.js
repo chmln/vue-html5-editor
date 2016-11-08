@@ -4,7 +4,7 @@ import dashboard from "./dashboard.vue";
  * Created by peak on 16/8/18.
  */
 export default {
-    name: "font",
+    name: "font_name_size",
     icon: "fa fa-font",
     i18n: "font",
     show: true,

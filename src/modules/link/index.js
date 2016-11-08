@@ -4,7 +4,7 @@
  */
 import dashboard from "./dashboard.vue";
 export default {
-    name: "link",
+    name: "hyperlink",
     icon: "fa fa-chain",
     show: true,
     i18n: "link",
