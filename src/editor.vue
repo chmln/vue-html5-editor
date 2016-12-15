@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="content" ref="content" contenteditable="true" @click="toggleDashboard(dashboard)"
-             :style="contentStyle">
+             :style="contentStyle" tabindex="-1">
         </div>
     </div>
 </template>
@@ -51,11 +51,11 @@
         },
         watch: {
             content(val) {
-                let content = this.$refs.content.innerHTML
-                if (val != content) {
-                    this.$refs.content.innerHTML = val
+                let content = this.$refs.content.innerHTML;
+                if (val !== content) {
+                    this.$refs.content.innerHTML = val;
+                    this.execCommand("removeFormat", null, false);
                 }
-
             },
             dashboard(val){
                 if (val) {
@@ -96,8 +96,9 @@
             toggleDashboard(dashboard){
                 this.dashboard == dashboard ? this.dashboard = null : this.dashboard = dashboard
             },
-            execCommand(command, arg){
-                this.restoreSelection();
+            execCommand(command, arg, restoreSelection){
+                if (restoreSelection !== false)
+                    this.restoreSelection();
                 document.execCommand(command, false, arg);
                 this.$emit("update", this.$refs.content.innerHTML);
                 this.dashboard = null;
